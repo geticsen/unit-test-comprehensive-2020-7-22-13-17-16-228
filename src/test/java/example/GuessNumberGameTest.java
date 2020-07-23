@@ -26,4 +26,15 @@ public class GuessNumberGameTest {
         //then
         Assertions.assertEquals("2A2B",actual);
     }
+    @Test
+    public  void  should_return_1A2B_when_guess_1234_given_1623(){
+        //given
+        String answer = "1234";
+        String guessNumber = "1623";
+        GuessNumberGame guessNumberGame = new GuessNumberGame(answer);
+        //when
+        String actual = guessNumberGame.guess(guessNumber);
+        //then
+        Assertions.assertEquals("1A2B",actual);
+    }
 }
