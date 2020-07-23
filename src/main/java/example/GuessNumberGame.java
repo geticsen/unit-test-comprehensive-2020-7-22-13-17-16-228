@@ -13,6 +13,11 @@ public class GuessNumberGame {
         this.answer = answerGenerate.generate();
     }
     public String guess(String guess){
-        return "4A0B";
+        if (answer.equals(guess)){
+            return "4A0B";
+        }else {
+            return "2A2B";
+        }
+
     }
 }
