@@ -1,10 +1,22 @@
 package example;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 public class GuessNumberGame {
     private int countTimes = 0;
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
+
     private String answer;
     private List<String> answerSplitList = new ArrayList<String>();
     private List<String> guessSplitList = new ArrayList<String>();
@@ -24,15 +36,41 @@ public class GuessNumberGame {
     public GuessNumberGame(AnswerGenerate answerGenerate) {
         this.answer = answerGenerate.generate();
     }
-
-    public String guess(String guess) {
-        String splitGuess[] = guess.split("");
-        for (String s : splitGuess) {
-            guessSplitList.add(s);
+    public String play(String guess){
+        this.countTimes++;
+        String output = "";
+        if(this.countTimes<=6){
+            output= guess(guess);
+        }else {
+            output= "game over";
         }
-        String locationRight = locationRightAndNumberRight();
-        String numberRight = locationErrorButNumberRight();
-        return locationRight + numberRight;
+        return output;
+    }
+    public boolean checkInput(String guess){
+        String splitGuess[] = guess.split("");
+        guessSplitList.clear();
+        for (String s : splitGuess) {
+            if(!guessSplitList.contains(s)){
+                guessSplitList.add(s);
+            }
+        }
+        if (guessSplitList.size()<4){
+            return false;
+        }else {
+            return true;
+        }
+    }
+    public String guess(String guess) {
+        String output = "";
+        if(checkInput(guess)){
+            String locationRight = locationRightAndNumberRight();
+            String numberRight = locationErrorButNumberRight();
+            output=  locationRight + numberRight;
+        }else {
+            output= "Wrong Input,Input again";
+            this.countTimes--;
+        }
+        return output;
     }
 
     public String locationRightAndNumberRight() {
@@ -62,5 +100,21 @@ public class GuessNumberGame {
     public boolean isNumberRight(String num) {
         return answerSplitList.contains(num);
     }
+    public static void main(String []args) throws IOException {
+        InputStreamReader is = new InputStreamReader(System.in); //new构造InputStreamReader对象
+        BufferedReader br = new BufferedReader(is); //拿构造的方法传到BufferedReader中
 
+        GuessNumberGame guessNumberGame = new GuessNumberGame(new AnswerGenerateImp().generate());
+        String answer = guessNumberGame.getAnswer();
+        System.out.println("answer is:" + answer);
+        String guess = "1234";
+        String output = "";
+        while (!output.equals("game over")){
+            System.out.print("Input guess:");
+            guess = br.readLine();
+            output = guessNumberGame.play(guess);
+            System.out.println(output);
+
+        }
+    }
 }
