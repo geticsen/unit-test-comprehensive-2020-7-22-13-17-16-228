@@ -101,6 +101,19 @@ public class GuessNumberGameTest {
         //then
         Assertions.assertEquals("Wrong Input,Input again", actual);
     }
+    @Test
+    public void should_return_wrong_message_when_guess_1234_given_123456() {
+        //given
+        String answer = "1234";
+        String guessNumber = "123456";
+        GuessNumberGame guessNumberGame = new GuessNumberGame(answer);
+
+        //when
+        String actual = guessNumberGame.play(guessNumber);
+
+        //then
+        Assertions.assertEquals("Wrong Input,Input again", actual);
+    }
 
     @Test
     public void should_return_game_over_when_guess_1234_given_over_6_times() {
@@ -118,10 +131,10 @@ public class GuessNumberGameTest {
         //then
         Assertions.assertEquals("game over", actual);
     }
+
     @Test
     public void should_return_4A0B_when_guess_answerGenerate_given_answerGenerate() {
         //given
-
         GuessNumberGame guessNumberGame = new GuessNumberGame(new AnswerGenerateImp().generate());
         String answer = guessNumberGame.getAnswer();
 
