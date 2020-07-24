@@ -37,7 +37,7 @@ public class GuessNumberGame {
         this.answer = answerGenerate.generate();
     }
     public String play(String guess){
-        this.countTimes++;
+
         String output = "";
         if(this.countTimes<=6){
             output= guess(guess);
@@ -54,13 +54,14 @@ public class GuessNumberGame {
                 guessSplitList.add(s);
             }
         }
-        if (guessSplitList.size()<4){
-            return false;
-        }else {
+        if (guessSplitList.size()==4){
             return true;
+        }else {
+            return false;
         }
     }
     public String guess(String guess) {
+        this.countTimes++;
         String output = "";
         if(checkInput(guess)){
             String locationRight = locationRightAndNumberRight();
@@ -107,7 +108,7 @@ public class GuessNumberGame {
         GuessNumberGame guessNumberGame = new GuessNumberGame(new AnswerGenerateImp().generate());
         String answer = guessNumberGame.getAnswer();
         System.out.println("answer is:" + answer);
-        String guess = "1234";
+        String guess = "";
         String output = "";
         while (!output.equals("game over")){
             System.out.print("Input guess:");
