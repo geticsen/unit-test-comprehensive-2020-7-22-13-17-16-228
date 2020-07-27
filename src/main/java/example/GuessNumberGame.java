@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GuessNumberGame {
+    private static final String GAME_OVER_MESSAGE = "game over";
     private int countTimes = 0;
 
     public String getAnswer() {
@@ -39,10 +40,10 @@ public class GuessNumberGame {
     public String play(String guess){
 
         String output = "";
-        if(this.countTimes<=6){
+        if(this.countTimes<6){
             output= guess(guess);
         }else {
-            output= "game over";
+            output= GAME_OVER_MESSAGE;
         }
         return output;
     }
