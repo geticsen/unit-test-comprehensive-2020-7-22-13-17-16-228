@@ -10,6 +10,7 @@ public class GuessNumberGame {
     private static final String GAME_OVER_MESSAGE = "game over";
     public static final String WRONG_INPUT_MESSAGE = "Wrong Input,Input again";
     public static final String ALL_RIGHT = "A";
+    public static final String WRONG_LOCATION = "B";
     private int countTimes = 0;
 
 
@@ -92,7 +93,7 @@ public class GuessNumberGame {
                 count++;
             }
         }
-        return count + "B";
+        return count + WRONG_LOCATION;
     }
 
     public boolean islocationRight(String s, int location) {
