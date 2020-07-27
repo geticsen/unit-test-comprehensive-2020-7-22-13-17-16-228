@@ -11,12 +11,6 @@ public class GuessNumberGame {
     private static final int INPUT_SIZE = 4;
     private int countTimes = 0;
 
-
-
-    public void setAnswer(String answer) {
-        this.answer = answer;
-    }
-
     private String answer;
     private List<String> answerSplitList = new ArrayList<String>();
     private List<String> guessSplitList = new ArrayList<String>();
