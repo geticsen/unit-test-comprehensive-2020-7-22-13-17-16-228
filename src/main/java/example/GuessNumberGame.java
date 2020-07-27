@@ -1,6 +1,7 @@
 package example;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class GuessNumberGame {
@@ -23,9 +24,7 @@ public class GuessNumberGame {
     public GuessNumberGame(String answer) {
         this.answer = answer;
         String splitAnswer[] = answer.split(SPACE_DELIMITER);
-        for (String s : splitAnswer) {
-            splitAnswerArray.add(s);
-        }
+        Collections.addAll(splitAnswerArray, splitAnswer);
     }
 
     public GuessNumberGame(AnswerGenerate answerGenerate) {
