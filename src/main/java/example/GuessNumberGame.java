@@ -76,8 +76,8 @@ public class GuessNumberGame {
 
     public String locationRightAndNumberRight() {
         int count = 0;
-        for (int i = 0; i < guessSplitList.size(); i++) {
-            if (islocationRight(guessSplitList.get(i), i)) {
+        for (int location = 0; location < guessSplitList.size(); location++) {
+            if (islocationRight(guessSplitList.get(location), location)) {
                 count++;
             }
         }
@@ -86,8 +86,8 @@ public class GuessNumberGame {
 
     public String locationErrorButNumberRight() {
         int count = 0;
-        for (int i = 0; i < guessSplitList.size(); i++) {
-            if (!islocationRight(guessSplitList.get(i), i) && isNumberRight(guessSplitList.get(i))) {
+        for (int location = 0; location < guessSplitList.size(); location++) {
+            if (!islocationRight(guessSplitList.get(location), location) && isNumberRight(guessSplitList.get(location))) {
                 count++;
             }
         }
