@@ -23,7 +23,7 @@ public class GuessNumberGame {
 
     public GuessNumberGame(String answer) {
         this.answer = answer;
-        String splitAnswer[] = answer.split(SPACE_DELIMITER);
+        String[] splitAnswer = answer.split(SPACE_DELIMITER);
         Collections.addAll(splitAnswerArray, splitAnswer);
     }
 
@@ -41,7 +41,7 @@ public class GuessNumberGame {
         return output;
     }
     public boolean checkInput(String guess){
-        String splitGuess[] = guess.split("");
+        String[] splitGuess = guess.split("");
         splitGuessArray.clear();
         for (String splitGuessItem : splitGuess) {
             if(!splitGuessArray.contains(splitGuessItem)){
