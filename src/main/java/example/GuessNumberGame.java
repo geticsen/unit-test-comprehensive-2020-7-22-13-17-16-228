@@ -8,6 +8,7 @@ import java.util.List;
 
 public class GuessNumberGame {
     private static final String GAME_OVER_MESSAGE = "game over";
+    public static final String WRONG_INPUT_MESSAGE = "Wrong Input,Input again";
     private int countTimes = 0;
 
     public String getAnswer() {
@@ -69,7 +70,7 @@ public class GuessNumberGame {
             String numberRight = locationErrorButNumberRight();
             output=  locationRight + numberRight;
         }else {
-            output= "Wrong Input,Input again";
+            output= WRONG_INPUT_MESSAGE;
             this.countTimes--;
         }
         return output;
