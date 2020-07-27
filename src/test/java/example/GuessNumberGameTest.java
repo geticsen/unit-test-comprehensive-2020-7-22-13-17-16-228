@@ -132,18 +132,4 @@ public class GuessNumberGameTest {
         Assertions.assertEquals("game over", actual);
     }
 
-    @Test
-    public void should_return_4A0B_when_guess_answerGenerate_given_answerGenerate() {
-        //given
-        GuessNumberGame guessNumberGame = new GuessNumberGame(new AnswerGenerateImp().generate());
-        String answer = guessNumberGame.getAnswer();
-
-        String guessNumber = answer;
-
-        //when
-        String actual = guessNumberGame.play(guessNumber);
-
-        //then
-        Assertions.assertEquals("4A0B", actual);
-    }
 }
