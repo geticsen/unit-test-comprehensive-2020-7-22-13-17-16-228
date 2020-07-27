@@ -13,7 +13,7 @@ public class GuessNumberGame {
     private int countTimes = 0;
 
     private String answer;
-    private List<String> answerSplitList = new ArrayList<String>();
+    private List<String> splitAnswerArray = new ArrayList<String>();
     private List<String> splitGuessArray = new ArrayList<String>();
 
     public GuessNumberGame() {
@@ -24,7 +24,7 @@ public class GuessNumberGame {
         this.answer = answer;
         String splitAnswer[] = answer.split(SPACE_DELIMITER);
         for (String s : splitAnswer) {
-            answerSplitList.add(s);
+            splitAnswerArray.add(s);
         }
     }
 
@@ -90,11 +90,11 @@ public class GuessNumberGame {
     }
 
     public boolean islocationRight(String s, int location) {
-        return answerSplitList.get(location).equals(s);
+        return splitAnswerArray.get(location).equals(s);
     }
 
     public boolean isNumberRight(String num) {
-        return answerSplitList.contains(num);
+        return splitAnswerArray.contains(num);
     }
 
 }
