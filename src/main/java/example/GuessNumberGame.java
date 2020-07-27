@@ -1,16 +1,14 @@
 package example;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 public class GuessNumberGame {
+    public static final String WRONG_LOCATION = "B";
     private static final String GAME_OVER_MESSAGE = "game over";
     public static final String WRONG_INPUT_MESSAGE = "Wrong Input,Input again";
     public static final String ALL_RIGHT = "A";
-    public static final String WRONG_LOCATION = "B";
+    public static final int INPUT_SIZE = 4;
     private int countTimes = 0;
 
 
@@ -56,7 +54,7 @@ public class GuessNumberGame {
                 guessSplitList.add(s);
             }
         }
-        if (guessSplitList.size()==4){
+        if (guessSplitList.size()== INPUT_SIZE){
             return true;
         }else {
             return false;
