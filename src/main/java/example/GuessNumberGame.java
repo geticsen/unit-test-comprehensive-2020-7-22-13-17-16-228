@@ -9,6 +9,7 @@ public class GuessNumberGame {
     private static final String WRONG_INPUT_MESSAGE = "Wrong Input,Input again";
     private static final String ALL_RIGHT = "A";
     private static final int INPUT_SIZE = 4;
+    public static final String SPACE_DELIMITER = "";
     private int countTimes = 0;
 
     private String answer;
@@ -21,7 +22,7 @@ public class GuessNumberGame {
 
     public GuessNumberGame(String answer) {
         this.answer = answer;
-        String splitAnswer[] = answer.split("");
+        String splitAnswer[] = answer.split(SPACE_DELIMITER);
         for (String s : splitAnswer) {
             answerSplitList.add(s);
         }
