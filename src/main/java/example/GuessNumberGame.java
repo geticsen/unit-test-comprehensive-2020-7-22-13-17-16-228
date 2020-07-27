@@ -75,13 +75,13 @@ public class GuessNumberGame {
     }
 
     public String locationRightAndNumberRight() {
-        int coutLocationRightAndNumberRight = 0;
+        int count = 0;
         for (int i = 0; i < guessSplitList.size(); i++) {
             if (islocationRight(guessSplitList.get(i), i)) {
-                coutLocationRightAndNumberRight++;
+                count++;
             }
         }
-        return coutLocationRightAndNumberRight + "A";
+        return count + "A";
     }
 
     public String locationErrorButNumberRight() {
