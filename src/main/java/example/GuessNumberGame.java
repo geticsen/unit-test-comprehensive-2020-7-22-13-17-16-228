@@ -11,9 +11,7 @@ public class GuessNumberGame {
     public static final String WRONG_INPUT_MESSAGE = "Wrong Input,Input again";
     private int countTimes = 0;
 
-    public String getAnswer() {
-        return answer;
-    }
+
 
     public void setAnswer(String answer) {
         this.answer = answer;
@@ -103,21 +101,5 @@ public class GuessNumberGame {
     public boolean isNumberRight(String num) {
         return answerSplitList.contains(num);
     }
-    public static void main(String []args) throws IOException {
-        InputStreamReader is = new InputStreamReader(System.in);
-        BufferedReader br = new BufferedReader(is);
 
-        GuessNumberGame guessNumberGame = new GuessNumberGame(new AnswerGenerateImp().generate());
-        String answer = guessNumberGame.getAnswer();
-        System.out.println("answer is:" + answer);
-        String guess = "";
-        String output = "";
-        while (!output.equals("game over")){
-            System.out.print("Input guess:");
-            guess = br.readLine();
-            output = guessNumberGame.play(guess);
-            System.out.println(output);
-
-        }
-    }
 }
