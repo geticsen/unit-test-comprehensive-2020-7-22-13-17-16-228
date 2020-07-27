@@ -14,7 +14,7 @@ public class GuessNumberGame {
 
     private String answer;
     private List<String> answerSplitList = new ArrayList<String>();
-    private List<String> guessSplitList = new ArrayList<String>();
+    private List<String> splitGuessArray = new ArrayList<String>();
 
     public GuessNumberGame() {
 
@@ -43,13 +43,13 @@ public class GuessNumberGame {
     }
     public boolean checkInput(String guess){
         String splitGuess[] = guess.split("");
-        guessSplitList.clear();
+        splitGuessArray.clear();
         for (String splitGuessItem : splitGuess) {
-            if(!guessSplitList.contains(splitGuessItem)){
-                guessSplitList.add(splitGuessItem);
+            if(!splitGuessArray.contains(splitGuessItem)){
+                splitGuessArray.add(splitGuessItem);
             }
         }
-        if (guessSplitList.size()== INPUT_SIZE){
+        if (splitGuessArray.size()== INPUT_SIZE){
             return true;
         }else {
             return false;
@@ -71,8 +71,8 @@ public class GuessNumberGame {
 
     public String locationRightAndNumberRight() {
         int count = 0;
-        for (int location = 0; location < guessSplitList.size(); location++) {
-            if (islocationRight(guessSplitList.get(location), location)) {
+        for (int location = 0; location < splitGuessArray.size(); location++) {
+            if (islocationRight(splitGuessArray.get(location), location)) {
                 count++;
             }
         }
@@ -81,8 +81,8 @@ public class GuessNumberGame {
 
     public String locationErrorButNumberRight() {
         int count = 0;
-        for (int location = 0; location < guessSplitList.size(); location++) {
-            if (!islocationRight(guessSplitList.get(location), location) && isNumberRight(guessSplitList.get(location))) {
+        for (int location = 0; location < splitGuessArray.size(); location++) {
+            if (!islocationRight(splitGuessArray.get(location), location) && isNumberRight(splitGuessArray.get(location))) {
                 count++;
             }
         }
