@@ -19,8 +19,4 @@ public class AnswerGenerateImp implements AnswerGenerate {
         return answer;
     }
 
-    public static void main(String[] args) {
-        AnswerGenerateImp answerGenerateImp = new AnswerGenerateImp();
-        System.out.println(answerGenerateImp.generate());
-    }
 }
