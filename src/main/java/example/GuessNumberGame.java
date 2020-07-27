@@ -85,13 +85,13 @@ public class GuessNumberGame {
     }
 
     public String locationErrorButNumberRight() {
-        int coutlocationErrorButNumberRight = 0;
+        int count = 0;
         for (int i = 0; i < guessSplitList.size(); i++) {
             if (!islocationRight(guessSplitList.get(i), i) && isNumberRight(guessSplitList.get(i))) {
-                coutlocationErrorButNumberRight++;
+                count++;
             }
         }
-        return coutlocationErrorButNumberRight + "B";
+        return count + "B";
     }
 
     public boolean islocationRight(String s, int location) {
