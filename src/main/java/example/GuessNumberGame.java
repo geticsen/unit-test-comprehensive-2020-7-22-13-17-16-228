@@ -49,9 +49,9 @@ public class GuessNumberGame {
     public boolean checkInput(String guess){
         String splitGuess[] = guess.split("");
         guessSplitList.clear();
-        for (String s : splitGuess) {
-            if(!guessSplitList.contains(s)){
-                guessSplitList.add(s);
+        for (String splitGuessItem : splitGuess) {
+            if(!guessSplitList.contains(splitGuessItem)){
+                guessSplitList.add(splitGuessItem);
             }
         }
         if (guessSplitList.size()== INPUT_SIZE){
