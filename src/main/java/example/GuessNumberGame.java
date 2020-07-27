@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GuessNumberGame {
-    public static final String WRONG_LOCATION = "B";
+    private static final String WRONG_LOCATION = "B";
     private static final String GAME_OVER_MESSAGE = "game over";
-    public static final String WRONG_INPUT_MESSAGE = "Wrong Input,Input again";
-    public static final String ALL_RIGHT = "A";
-    public static final int INPUT_SIZE = 4;
+    private static final String WRONG_INPUT_MESSAGE = "Wrong Input,Input again";
+    private static final String ALL_RIGHT = "A";
+    private static final int INPUT_SIZE = 4;
     private int countTimes = 0;
 
 
